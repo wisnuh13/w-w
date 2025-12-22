@@ -30,8 +30,8 @@ body {
     min-height: 100dvh; /* prefer dynamic viewport height on mobile */
     width: 100vw;
     overflow-y: hidden;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+    scroll-padding-bottom: 120px;
 }
 
 /* --- SCROLL ANIMATION & KEYFRAMES --- */

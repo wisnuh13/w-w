@@ -28,7 +28,7 @@
 
     <!-- Background Music -->
     <audio id="background-music" loop>
-        <source src="music/I Love You Anyway.mp3" type="audio/mpeg">
+        <source src="music/IF - Bread (Saxophone Cover by Dori Wirawan).mp3" type="audio/mpeg">
         Browser Anda tidak mendukung elemen audio.
     </audio>
 
@@ -159,6 +159,9 @@
                     <div class="thumb" onclick="changeImage(this, 'img/4.jpg')"><img src="img/4.jpg"></div>
                     <div class="thumb" onclick="changeImage(this, 'img/5.jpg')"><img src="img/5.jpg"></div>
                     <div class="thumb" onclick="changeImage(this, 'img/6.JPEG')"><img src="img/6.JPEG"></div>
+                    <div class="thumb" onclick="changeImage(this, 'img/7.jpg')"><img src="img/7.jpg"></div>
+                    <div class="thumb" onclick="changeImage(this, 'img/8.jpg')"><img src="img/8.jpg"></div>
+                    <div class="thumb" onclick="changeImage(this, 'img/thumbnail.JPG')"><img src="img/thumbnail.JPG"></div>
                 </div>
             </div>
 
@@ -272,6 +275,30 @@
 
     <script>
 
+        // Custom smooth scroll function with easing
+        function smoothScrollTo(element, duration = 1000) {
+            const targetPosition = element.offsetTop;
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            let startTime = null;
+
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+                window.scrollTo(0, run);
+                if (timeElapsed < duration) requestAnimationFrame(animation);
+            }
+
+            function easeInOutQuad(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+            }
+
+            requestAnimationFrame(animation);
+        }
 
         // KUNCI NAVIGASI: mencegah pindah slide sampai undangan dibuka
         let isOpened = false;
@@ -289,6 +316,12 @@
                     if (openBtn) {
                         openBtn.classList.add('btn-shake');
                         setTimeout(() => openBtn.classList.remove('btn-shake'), 700);
+                    }
+                } else if (href && isOpened) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        smoothScrollTo(targetElement, 800);
                     }
                 }
             }
@@ -340,7 +373,8 @@
             // Buka kunci navigasi dan aktifkan scroll
             isOpened = true;
             document.getElementById('scrollContainer').style.overflowY = 'scroll';
-            document.getElementById('slide2').scrollIntoView({ behavior: 'smooth' });
+            const slide2 = document.getElementById('slide2');
+            smoothScrollTo(slide2, 800);
 
             // Show music control button
             document.querySelector('.music-control').style.display = 'flex';
