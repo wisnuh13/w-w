@@ -1,13 +1,15 @@
-# TODO: Improve Scrolling Smoothness and Integration
+# TODO: Fix WhatsApp Link Preview Image
 
-## CSS Changes
-- [x] Change scroll-snap-type from 'mandatory' to 'y proximity' in .container
-- [x] Add scroll-padding-bottom: 120px to .container to account for bottom nav
-- [x] Remove scroll-behavior: smooth from .container
+## Tasks to Complete
+- [ ] Ensure thumbnail.jpeg is square (1:1 aspect ratio) with minimum 300x300 pixels
+- [ ] Verify thumbnail.jpeg file size is under 300 KB
+- [ ] Commit and push all changes (including index.html updates) to GitHub repository
+- [ ] Test the WhatsApp link preview by sending the URL https://wisnuh13.github.io/w-w/ in WhatsApp
 
-## JavaScript Changes
-- [x] Add custom smoothScrollTo function with easing
-- [x] Update bottom nav link event listeners to use custom smooth scroll
-- [x] Update open button to use custom smooth scroll
+## Changes Made
+- Removed og:image:width, og:image:height, and og:image:type meta tags from index.html to prevent conflicts if dimensions are incorrect
+- Open Graph meta tags are now minimal: og:title, og:description, og:image, og:url, og:type
 
-All changes implemented successfully.
+## Notes
+- WhatsApp may cache link previews, so changes might take time to appear
+- If image still doesn't show, check that the image is publicly accessible and the URL is correct
