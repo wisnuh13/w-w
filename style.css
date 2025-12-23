@@ -70,12 +70,12 @@ section.active .reveal-box,
 }
 
 /* 3D Animations for slides */
-#slide1.active, #slide2.active, #slide3.active, #slide4.active, #slide5.active, #slide6.active, #slide7.active, #slide8.active, #slide9.active, #slide10.active {
+#slide1.active, #slide2.active, #slide3.active, #slide4.active, #slide5.active, #slide6.active, #slide9.active, #slide10.active {
     transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(50px);
     transition: transform 1s ease-out;
 }
 
-#slide1, #slide2, #slide3, #slide4, #slide5, #slide6, #slide7, #slide8, #slide9, #slide10 {
+#slide1, #slide2, #slide3, #slide4, #slide5, #slide6, #slide9, #slide10 {
     transform: perspective(1000px) rotateX(10deg) rotateY(10deg) translateZ(-50px);
     transition: transform 1s ease-out;
 }
@@ -336,12 +336,15 @@ p:hover {
     max-width: 600px;
     padding: 20px;
 }
-.bismillah-img {
-    max-width: 300px;
-    height: auto;
+.bismillah-text {
+    font-family: 'Amiri', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
     margin: 30px auto;
     display: block;
-    color: var(--black-color);
+    color: var(--primary-color);
+    direction: rtl; /* Right-to-left for Arabic */
 }
 .assalamualaikum-logo {
     max-width: 200px;
@@ -892,7 +895,7 @@ p:hover {
     background-position: center;
     backdrop-filter: none;
 }
-#slide7, #slide8, #slide9, #slide10 {
+#slide9, #slide10 {
     background: var(--bg-url) no-repeat;
     background-size: cover;
     background-position: center;
