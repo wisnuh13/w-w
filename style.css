@@ -328,7 +328,7 @@ p:hover {
 }
 #slide1 h2 {
     font-family: var(--fancy-serif);
-    font-size: 0.5rem;
+    font-size: 1.2rem;
     color: var(--primary-color);
 }
 .couple-wrapper {
@@ -338,7 +338,7 @@ p:hover {
 }
 .bismillah-text {
     font-family: 'Amiri', serif;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 700;
     text-align: center;
     margin: 30px auto;
@@ -356,7 +356,7 @@ p:hover {
 }
 #slide1 p {
     font-family: var(--fancy-serif);
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-style: italic;
     line-height: 1.3rem;
     color: var(--primary-color);
@@ -386,15 +386,15 @@ p:hover {
 }
 .couple-card {
     position: relative;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 20px;
+    border-radius: 15px;
     width: auto;
     max-width: none;
     background: transparent;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     z-index: 1;
     color: var(--secondary-color);
-    margin: 0 auto;
+    margin: 15px auto;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -404,52 +404,9 @@ p:hover {
 }
 
 .couple-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15), 0 0 20px rgba(139, 69, 19, 0.4);
-    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15), 0 0 15px rgba(139, 69, 19, 0.3);
     animation: glow-pulse 2s infinite, subtle-rotate 3s infinite;
-}
-
-/* Efek Bunga di Couple Card */
-.couple-card::before,
-.couple-card::after,
-.couple-card .flower-top-right,
-.couple-card .flower-bottom-left {
-    content: '';
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    background: url('img/fl.png') no-repeat center center;
-    background-size: contain;
-    filter: sepia(30%) hue-rotate(330deg) opacity(0.7);
-    z-index: 0;
-}
-.couple-card::before { /* Kiri - Pseudo 1 */
-    top: 50%;
-    left: -40px;
-    transform: translateY(-50%) rotate(0deg);
-}
-.couple-card::after { /* Kanan - Pseudo 2 */
-    top: 50%;
-    right: -40px;
-    transform: translateY(-50%) rotate(180deg);
-}
-.couple-card .flower-top-right { /* Kanan - HTML div */
-    top: -20px;
-    right: -20px;
-    transform: rotate(10deg);
-    opacity: 0;
-    width: 150px;
-    z-index: 3;
-    pointer-events: none;
-}
-.couple-card .flower-bottom-left { /* Kiri - HTML div */
-    bottom: -20px;
-    left: -20px;
-    opacity: 0;
-    width: 150px;
-    z-index: 3;
-    pointer-events: none;
 }
 
 .photo-frame {
@@ -457,7 +414,7 @@ p:hover {
     width: 100px;
     height: 130px;
     margin: 0 12px 0 0;
-    border-radius: 50% / 30%;
+    border-radius: 100px 100px 0 0;
     overflow: hidden;
     border: 4px solid var(--primary-color);
     flex-shrink: 0;
@@ -474,11 +431,11 @@ p:hover {
 
 /* Frame Foto Bentuk Kubah (Arch) for slide 3 */
 #slide3 .photo-frame {
-    width: 200px;
-    height: 300px;
-    border: 2px solid var(--primary-color);
+    width: 80px;
+    height: 120px;
+    border: 1px solid var(--primary-color);
     border-radius: 100px 100px 0 0; /* Membuat bentuk kubah/arch */
-    padding: 8px;
+    padding: 6px;
     position: relative;
     flex-shrink: 0;
 }
@@ -497,35 +454,13 @@ p:hover {
 .top-right { top: -20px; right: -20px; transform: rotate(10deg); }
 .bottom-left { bottom: -20px; left: -20px; }
 
-/* Flower decorations around photo frame */
-.photo-frame::before,
-.photo-frame::after {
-    content: '';
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background: url('img/fl.png') no-repeat center center;
-    background-size: contain;
-    filter: sepia(30%) hue-rotate(330deg) opacity(0.8);
-    z-index: 2;
-}
-
-.photo-frame::before {
-    top: -10px;
-    left: -10px;
-    transform: rotate(0deg);
-}
-
-.photo-frame::after {
-    bottom: -10px;
-    right: -10px;
-    transform: rotate(180deg);
-}
+/* Flower decorations around photo frame removed */
 .photo-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
+    border-radius: 100px 100px 0 0;
 }
 
 /* Updated photo-frame img for #slide3 to match arch shape */
@@ -550,7 +485,7 @@ p:hover {
 /* Updated couple-name for #slide3 to match provided style */
 #slide3 .couple-name {
     font-family: 'Great Vibes', cursive;
-    font-size: 2.5rem;
+    font-size: 0.9rem;
     margin: 0;
     color: var(--dark-text);
     text-align: left;
@@ -558,21 +493,12 @@ p:hover {
 
 /* Updated details for #slide3 to match provided style */
 #slide3 .details {
-    font-size: 0.75rem;
+    font-size: 0.5rem;
     line-height: 1.6;
     margin-bottom: 10px;
 }
 
-/* Add decorative symbol for #slide3 photo-frame */
-#slide3 .photo-frame::after {
-    content: '✧';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1.5rem;
-    color: var(--primary-color);
-}
+/* Add decorative symbol for #slide3 photo-frame removed */
 
 /* Decorative Ribbon for Photo Frames */
 .decorative-ribbon {
@@ -588,38 +514,88 @@ p:hover {
     z-index: 4;
     pointer-events: none;
 }
-
-
 .social-links {
     margin-top: 8px;
 }
 .instagram-btn {
-    display: inline-flex; 
+    display: inline-flex;
     align-items: center;
-    padding: 4px 8px;
-    background: var(--dusty-color); 
-    color: var(--secondary-color); 
+    padding: 8px 16px;
+    background: #ffffff;
+    color: var(--secondary-color);
     text-decoration: none;
-    border-radius: 15px; 
-    font-size: 0.75rem;
+    border-radius: 15px;
+    font-size: 1rem;
     font-weight: 600;
-    transition: background 0.3s, color 0.3s;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
     font-family: var(--sans);
     letter-spacing: 0.5px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 .instagram-btn i {
-    margin-right: 4px; 
-    font-size: 0.85rem;
-    color: var(--primary-color); 
+    margin-right: 8px;
+    font-size: 1.5rem;
+    color: var(--primary-color);
 }
 .instagram-btn:hover {
-    background: var(--primary-color); 
+    background: var(--primary-color);
     color: white;
 }
 .instagram-btn:hover i {
-    color: white; 
+    color: white;
+}
+.instagram-btn:active {
+    transform: scale(0.95);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.3), 0 0 20px rgba(197, 160, 89, 0.5);
+    background: var(--accent-gold);
+    color: white;
+}
+.instagram-btn:active i {
+    color: white;
 }
 
+
+/* 4. Slide 4 (Akad) */
+#slide4 {
+    background: var(--bg-url) no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: var(--primary-color);
+}
+
+    .gold-frame {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--accent-gold);
+        padding: 15px;
+        border-radius: 12px;
+        width: 95%;
+        max-width: 500px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin: 10px auto;
+        color: var(--secondary-color);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+    }
+
+.event-title {
+    font-family: var(--fancy-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.gold-frame:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border-color: var(--accent-gold);
+}
 
 /* 4. Slide 3 (Event) */
 #slide3 {
@@ -640,7 +616,7 @@ p:hover {
     width: 100%;
 }
 #slide3 .couple-card {
-    width: 400px;
+    width: 300px;
     background: transparent;
     padding: 40px 30px;
     position: relative;
@@ -674,8 +650,8 @@ p:hover {
     display: inline-block;
 }
 #slide3 h2 {
-    color: var(--secondary-color);
-    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-size: 0.9rem;
 }
 .glass-card {
     position: relative;
@@ -696,7 +672,6 @@ p:hover {
 .glass-card:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15), 0 0 20px rgba(139, 69, 19, 0.3);
-    background: rgba(255, 255, 255, 0.9);
     border-color: var(--accent-gold);
     animation: glow-pulse 2s infinite, subtle-rotate 3s infinite;
 }
@@ -840,20 +815,20 @@ p:hover {
 .time-box:hover {
     transform: translateY(-5px); 
 }
-.time-box span {
-    font-family: var(--fancy-serif);
-    font-size: 2.5rem; 
-    font-weight: 700;
-    line-height: 1;
-    margin-bottom: 5px;
-}
-.time-box small {
-    font-family: var(--sans);
-    font-size: 0.8rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+    .time-box span {
+        font-family: var(--fancy-serif);
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 4px;
+    }
+    .time-box small {
+        font-family: var(--sans);
+        font-size: 0.75rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
 
 /* 6. Slide 5 (Galeri) */
 #slide5 {
@@ -932,21 +907,21 @@ p:hover {
     font-size: 1rem;
     color: var(--secondary-color);
 }
-.atm-card {
-    background: #fff;
-    border: 1px solid var(--dusty-color);
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    width: 100%;
-    text-align: left;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    color: var(--secondary-color);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
+    .atm-card {
+        background: #fff;
+        border: 1px solid var(--dusty-color);
+        display: flex;
+        align-items: center;
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 12px;
+        width: 100%;
+        text-align: left;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        color: var(--secondary-color);
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
 
 .atm-card:hover {
     transform: translateX(10px) scale(1.02);
@@ -1450,80 +1425,81 @@ p:hover {
     #slide3 .couple-wrapper {
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 15px;
         width: 100%;
         max-width: 100%;
         align-items: center;
     }
     #slide3 .text-section {
-        width: 95%;
+        width: 100%;
         text-align: center;
         order: -1;
-        padding: 0 5px;
+        padding: 10px 8px;
     }
     #slide3 .text-section h2 {
-        font-size: 0.8rem;
-        margin-bottom: 6px;
-        line-height: 1.3;
+        font-size: 0.7rem;
+        margin-bottom: 8px;
+        line-height: 1.4;
     }
     #slide3 .text-section p {
-        font-size: 0.75rem;
-        line-height: 1.3;
-        margin-bottom: 4px;
+        font-size: 0.6rem;
+        line-height: 1.4;
+        margin-bottom: 5px;
     }
     #slide3 .couple-card {
         max-width: 90%;
-        padding: 8px;
+        padding: 25px 15px;
         width: auto;
         margin: 0 auto;
-        flex-direction: column;
-        gap: 6px;
+        flex-direction: row;
+        gap: 12px;
         background: transparent;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
     #slide3 .couple-card:nth-child(2) {
-        order: 1;
+        flex-direction: row;
     }
     #slide3 .couple-card:nth-child(3) {
-        order: 2;
+        flex-direction: row-reverse;
     }
     #slide3 .photo-frame {
         width: 100px;
         height: 150px;
-        margin: 0 auto 6px;
-        border: 2px solid var(--primary-color);
+        margin: 0 10px 0 0;
+        border: 1px solid var(--primary-color);
         border-radius: 100px 100px 0 0;
-        padding: 3px;
+        padding: 4px;
     }
     #slide3 .photo-frame img {
         border-radius: 100px 100px 0 0;
     }
     #slide3 .couple-name {
-        font-size: 1.2rem;
-        margin: 0;
-        text-align: center;
+        font-size: 1.1rem;
+        margin: 8px 0;
+        text-align: left;
+        line-height: 1.3;
     }
     #slide3 .details {
-        font-size: 0.7rem;
-        line-height: 1.4;
-        margin-bottom: 4px;
+        font-size: 0.75rem;
+        line-height: 1.5;
+        margin-bottom: 6px;
     }
     #slide3 .photo-frame::after {
-        font-size: 0.8rem;
-        bottom: -6px;
+        font-size: 1.2rem;
+        bottom: -12px;
     }
     #slide3 .social-links {
-        margin-top: 3px;
+        margin-top: 6px;
     }
     #slide3 .instagram-btn {
         padding: 3px 6px;
-        font-size: 0.65rem;
+        font-size: 0.6rem;
     }
     #slide3 .assalamualaikum-logo {
-        margin: 6px auto;
+        margin: 20px auto;
     }
     #slide3 p {
-        margin-bottom: 2px;
+        margin-bottom: 8px;
     }
 }
 
@@ -1541,6 +1517,11 @@ p:hover {
     p {
         font-size: 1.1rem;
     }
+    .gold-frame {
+        padding: 18px;
+        border-radius: 14px;
+        margin: 12px auto;
+    }
     #guest-name {
         font-size: 4rem;
     }
@@ -1553,6 +1534,11 @@ p:hover {
     .photo-frame {
         width: 175px;
         height: 225px;
+    }
+    #slide3 .photo-frame {
+        width: 100px;
+        height: 150px;
+        margin: 0 auto 8px;
     }
     .bismillah-img, .assalamualaikum-logo {
         max-width: 180px;
@@ -1654,6 +1640,10 @@ p:hover {
     .photo-frame {
         width: 160px;
         height: 210px;
+    }
+    #slide3 .photo-frame {
+        width: 400px;
+        height: 500px;
     }
     .bismillah-img, .assalamualaikum-logo {
         max-width: 200px;
@@ -1809,9 +1799,9 @@ p:hover {
 .thumbnail-slider::-webkit-scrollbar { display: none; } /* Hilangkan scrollbar Chrome */
 
 .thumb {
-    min-width: 80px;
-    height: 100px;
-    border-radius: 12px;
+    min-width: 70px;
+    height: 90px;
+    border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
     border: 2px solid transparent;
@@ -2022,9 +2012,8 @@ p:hover {
 }
 
 .event-details:hover {
-    transform: translateY(-3px) scale(1.01);
+    transform: translateY(-5px) scale(1.02);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 15px rgba(139, 69, 19, 0.2);
-    background: rgba(255, 255, 255, 0.1);
 }
 
 .event-details::before,
@@ -2126,20 +2115,19 @@ p:hover {
 }
 
 .text-section:hover {
-    transform: translateY(-2px) scale(1.01);
+    transform: translateY(-5px) scale(1.02);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 0 10px rgba(139, 69, 19, 0.2);
-    background: rgba(255, 255, 255, 0.05);
     animation: glow-pulse 2s infinite, subtle-rotate 3s infinite;
 }
 
 .text-section h2 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin-bottom: 10px;
     line-height: 1.4;
 }
 
 .text-section p {
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     line-height: 1.4;
     margin-bottom: 5px;
 }
@@ -2196,12 +2184,12 @@ p:hover {
     }
 
     .text-section h2 {
-        font-size: 0.95rem;
+        font-size: 1.05rem;
         margin-bottom: 8px;
     }
 
     .text-section p {
-        font-size: 0.85rem;
+        font-size: 0.95rem;
     }
 
     h1 {
@@ -2283,13 +2271,13 @@ p:hover {
     }
 
     .text-section h2 {
-        font-size: 0.9rem;
+        font-size: 1rem;
         margin-bottom: 6px;
         line-height: 1.3;
     }
 
     .text-section p {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         line-height: 1.2;
     }
 
@@ -2322,185 +2310,215 @@ p:hover {
         font-size: 0.85rem;
         margin-top: 8px;
     }
+
+    /* Slide 3 specific adjustments for very small mobile */
+    #slide3 .couple-wrapper {
+        gap: 10px;
+    }
+    #slide3 .couple-card {
+        padding: 12px;
+        gap: 8px;
+    }
+    #slide3 .photo-frame {
+        width: 80px;
+        height: 120px;
+        margin: 0 auto 8px;
+    }
+    #slide3 .couple-name {
+        font-size: 1rem;
+    }
+    #slide3 .details {
+        font-size: 0.7rem;
+    }
+    #slide3 .text-section h2 {
+        font-size: 0.6rem;
+    }
+    #slide3 .text-section p {
+        font-size: 0.5rem;
+    }
+    #slide3 .instagram-btn {
+        padding: 3px 6px;
+        font-size: 0.5rem;
+    }
 }
     .address-section h3 {
         font-weight: bold;
     }
 
-/* --- NEW COUNTDOWN STYLES (ADAPTED LAYOUT AND SHAPE, PRESERVING EXISTING TEXT COLORS AND FONTS) --- */
-.garden-background {
-    /* Ganti URL di bawah dengan gambar taman pilihanmu */
-    background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)),
-                url('https://images.unsplash.com/photo-1558905619-1725426120c9?q=80&w=2000') no-repeat center center fixed;
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.countdown-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.time-box {
-    background: rgba(255, 255, 255, 0.3); /* Efek transparan */
-    backdrop-filter: blur(8px); /* Efek blur kaca */
-    border: 1px solid rgba(122, 92, 92, 0.4);
-    border-radius: 10px;
-    padding: 20px;
-}
-
-.time-box span {
-    display: block;
-    font-size: 2.5rem;
-    font-style: italic;
-    font-weight: lighter;
-}
-
-.time-box p {
-    margin: 5px 0 0;
-    font-size: 0.9rem;
-    text-transform: capitalize;
-}
-
-.add-calendar {
-    margin-top: 30px;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 25px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-/* --- KEYFRAMES FOR FRAME EFFECTS --- */
-@keyframes glow-pulse {
-    0% { box-shadow: 0 0 5px rgba(197, 160, 89, 0.5); }
-    50% { box-shadow: 0 0 20px rgba(197, 160, 89, 0.8), 0 0 30px rgba(197, 160, 89, 0.6); }
-    100% { box-shadow: 0 0 5px rgba(197, 160, 89, 0.5); }
-}
-
-@keyframes subtle-rotate {
-    0% { transform: rotate(0deg); }
-    50% { transform: rotate(2deg); }
-    100% { transform: rotate(0deg); }
-}
-
-/* --- NEW WEDDING DESIGN STYLES --- */
-:root {
-    --text-color: #8B4513;
-    --gold-color: #c5a059;
-}
-
-.main-container {
-    background: #e8f0e6 url('https://images.unsplash.com/photo-1518131359045-810996123049?q=80&w=2000') no-repeat center center fixed;
-    background-size: cover;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    padding-top: 50px;
-}
-
-/* Header */
-.wedding-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    color: var(--text-color);
-    margin: 0;
-}
-
-.day-text {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2rem;
-    color: var(--text-color);
-    margin: 5px 0;
-}
-
-.date-text {
-    letter-spacing: 2px;
-    font-size: 0.9rem;
-    color: var(--text-color);
-}
-
-/* Bingkai Emas */
-.frame-container {
-    margin-top: 40px;
-    z-index: 2; /* Agar berada di atas background */
-}
-
-.gold-frame {
-    border: 3px solid var(--gold-color);
-    padding: 40px 20px;
-    border-radius: 50% 50% 0 0 / 20% 20% 0 0; /* Membuat lengkungan atas */
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(5px);
-    width: 300px;
-    text-align: center;
-    position: relative;
-    transition: all 0.4s ease;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(197, 160, 89, 0.3);
-}
-
-.gold-frame:hover {
-    transform: scale(1.05) rotate(1deg);
-    box-shadow: 0 0 30px rgba(197, 160, 89, 0.8), 0 15px 40px rgba(0, 0, 0, 0.2);
-    border-color: var(--accent-gold);
-    background: rgba(255, 255, 255, 0.6);
-    animation: glow-pulse 2s infinite, subtle-rotate 3s infinite;
-}
-
-/* Ornamen atas bingkai sederhana dengan CSS */
-.gold-frame::before {
-    content: "❧";
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 2rem;
-    color: var(--gold-color);
-}
-
-.matrimony-title {
-    font-family: 'Great Vibes', cursive;
-    font-size: 1.8rem;
-    color: var(--text-color);
-}
-
-.location {
-    font-size: 0.85rem;
-    line-height: 1.6;
-    margin: 20px 0;
-}
-
 .btn-maps {
-    background: #7a4a4a;
-    color: white;
-    border: none;
-    padding: 8px 20px;
-    border-radius: 20px;
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    transition: all 0.4s ease;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: var(--fancy-serif);
+    font-size: 0.9rem;
     cursor: pointer;
-    font-size: 0.8rem;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--accent-gold);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Efek Overlay Tanaman (Bunga di bagian bawah) */
-.garden-overlay {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 40%;
-    /* Gunakan gambar PNG transparan pohon/bunga di sini */
-    background: url('https://www.transparentpng.com/download/grass/green-grass-free-download-transparent-3.png') repeat-x bottom;
+.btn-maps:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2), 0 0 20px rgba(197, 160, 89, 0.5);
+    background: linear-gradient(135deg, rgba(255,255,255,1), rgba(248,187,208,0.1));
+    color: var(--accent-gold);
+}
+
+.btn-maps i {
+    margin-right: 8px;
+    transition: all 0.3s ease;
+    animation: icon-pulse 2s infinite;
+}
+
+.btn-maps:hover i {
+    transform: scale(1.2) rotate(10deg);
+    color: var(--accent-gold);
+    animation: icon-bounce 0.6s ease;
+}
+
+@keyframes icon-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes icon-bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) scale(1.2) rotate(10deg); }
+    40% { transform: translateY(-10px) scale(1.2) rotate(10deg); }
+    60% { transform: translateY(-5px) scale(1.2) rotate(10deg); }
+}
+
+/* --- FALLING FLOWER PETALS EFFECTS --- */
+.falling-petal {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: url('img/fl.png') no-repeat center center;
     background-size: contain;
-    pointer-events: none; /* Agar tidak menghalangi klik tombol */
+    filter: sepia(30%) hue-rotate(330deg) opacity(0.7);
+    z-index: 1;
+    pointer-events: none;
+    animation: fall 10s linear infinite;
+}
+
+.falling-petal.petal1 { left: 5%; animation-delay: 0s; }
+.falling-petal.petal2 { left: 15%; animation-delay: 1s; }
+.falling-petal.petal3 { left: 25%; animation-delay: 2s; }
+.falling-petal.petal4 { left: 35%; animation-delay: 3s; }
+.falling-petal.petal5 { left: 45%; animation-delay: 4s; }
+.falling-petal.petal6 { left: 55%; animation-delay: 5s; }
+.falling-petal.petal7 { left: 65%; animation-delay: 6s; }
+.falling-petal.petal8 { left: 75%; animation-delay: 7s; }
+.falling-petal.petal9 { left: 85%; animation-delay: 8s; }
+.falling-petal.petal10 { left: 95%; animation-delay: 9s; }
+
+@keyframes fall {
+    0% {
+        top: -50px;
+        transform: rotate(0deg) scale(1);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        top: 100vh;
+        transform: rotate(360deg) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* --- TWINKLING STARS EFFECTS --- */
+.twinkling-star {
+    position: fixed;
+    width: 3px;
+    height: 3px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+.twinkling-star.star1 { top: 10%; left: 10%; animation-delay: 0s; }
+.twinkling-star.star2 { top: 20%; left: 80%; animation-delay: 0.5s; }
+.twinkling-star.star3 { top: 30%; left: 20%; animation-delay: 1s; }
+.twinkling-star.star4 { top: 40%; left: 70%; animation-delay: 1.5s; }
+.twinkling-star.star5 { top: 50%; left: 30%; animation-delay: 2s; }
+.twinkling-star.star6 { top: 60%; left: 90%; animation-delay: 2.5s; }
+.twinkling-star.star7 { top: 70%; left: 40%; animation-delay: 0s; }
+.twinkling-star.star8 { top: 80%; left: 60%; animation-delay: 0.5s; }
+.twinkling-star.star9 { top: 90%; left: 15%; animation-delay: 1s; }
+.twinkling-star.star10 { top: 25%; left: 85%; animation-delay: 1.5s; }
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1); }
+}
+
+/* --- GLOW PULSE ON TITLES --- */
+@keyframes glow-pulse {
+    0%, 100% {
+        text-shadow: 0 0 5px rgba(139, 69, 19, 0.5), 0 0 10px rgba(139, 69, 19, 0.3), 0 0 15px rgba(139, 69, 19, 0.2);
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(139, 69, 19, 0.8), 0 0 20px rgba(139, 69, 19, 0.6), 0 0 30px rgba(139, 69, 19, 0.4);
+    }
+}
+
+.wedding-title, .couple-name, h1, h2 {
+    animation: glow-pulse 4s ease-in-out infinite;
+}
+
+/* --- CONFETTI BURST EFFECTS --- */
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    animation: confetti-fall linear forwards;
+}
+
+@keyframes confetti-fall {
+    0% {
+        top: -10px;
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 100vh;
+        transform: rotate(720deg);
+    }
+}
+
+/* --- WIGGLE ANIMATION ON BUTTONS --- */
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-3deg); }
+    75% { transform: rotate(3deg); }
+}
+
+.btn-buka:hover, .btn-maps:hover, .instagram-btn:hover, .btn-copy:hover {
+    animation: wiggle 0.5s ease-in-out;
 }
 
 

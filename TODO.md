@@ -1,16 +1,34 @@
-# TODO: Fix WhatsApp Link Preview Image
+# TODO: Add New Effects to Wedding Invitation Website
 
-## Tasks to Complete
-- [x] Ensure thumbnail.jpeg is square (1:1 aspect ratio) with minimum 300x300 pixels
-- [x] Verify thumbnail.jpeg file size is under 300 KB
-- [ ] Commit and push all changes (including index.html updates) to GitHub repository
-- [ ] Test the WhatsApp link preview by sending the URL https://wisnuh13.github.io/w-w/ in WhatsApp
+## Information Gathered
+- Wedding invitation site with multiple slides (HTML + CSS + JS).
+- Existing effects: butterflies, floating hearts, moving clouds, glow effects, smooth scroll.
+- New effects to add: falling flower petals, twinkling stars, glow pulse on titles, confetti burst on opening, subtle wiggle on buttons.
+- Effects should be romantic, elegant, responsive, and performant.
 
-## Changes Made
-- Removed og:image:width, og:image:height, and og:image:type meta tags from index.html to prevent conflicts if dimensions are incorrect
-- Open Graph meta tags are now minimal: og:title, og:description, og:image, og:url, og:type
+## Plan
+- Add falling flower petals animation across all slides.
+- Implement twinkling stars in the background.
+- Add glow pulse effect to main titles and couple names.
+- Create confetti burst animation triggered on invitation opening.
+- Add subtle wiggle animation to buttons on hover.
 
-## Notes
-- WhatsApp may cache link previews, so changes might take time to appear
-- If image still doesn't show, check that the image is publicly accessible and the URL is correct
-- User has been instructed to check and resize thumbnail.jpeg if necessary to meet 300x300 minimum square requirements
+## Dependent Files to be Edited
+- index.html (add HTML elements for new effects)
+- style.css (add CSS animations and keyframes)
+- (JavaScript in index.html for confetti trigger)
+
+## Followup Steps
+- Test effects on different devices and browsers.
+- Ensure performance is not impacted.
+- Adjust animations if needed for better user experience.
+
+## Steps
+- [x] Add HTML elements for falling flower petals in index.html.
+- [x] Add CSS for falling flower petals animation in style.css.
+- [x] Add HTML elements for twinkling stars in index.html.
+- [x] Add CSS for twinkling stars animation in style.css.
+- [x] Add glow pulse keyframes and apply to titles in style.css.
+- [x] Add confetti elements and JavaScript trigger in index.html.
+- [x] Add CSS for confetti animation in style.css.
+- [x] Add wiggle animation to buttons in style.css.
