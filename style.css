@@ -27,7 +27,7 @@ body {
     font-family: var(--sans);
 }
 .container {
-    min-height: 100dvh; /* prefer dynamic viewport height on mobile */
+    height: 100dvh; /* fixed height to enable proper scrolling inside container */
     width: 100vw;
     overflow-y: hidden;
     /* Removed scroll-snap-type to allow free scrolling */
