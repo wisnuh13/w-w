@@ -69,43 +69,44 @@ section.active .reveal-box,
     transform: none;
 }
 
-/* 3D Animations for slides */
+/* Optimized 3D Animations for slides with hardware acceleration */
 #slide1.active, #slide2.active, #slide3.active, #slide4.active, #slide5.active, #slide6.active, #slide9.active, #slide10.active {
-    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(50px);
-    transition: transform 1s ease-out;
+    transform: translateZ(50px);
+    transition: transform 0.6s ease-out;
+    will-change: transform;
 }
 
 #slide1, #slide2, #slide3, #slide4, #slide5, #slide6, #slide9, #slide10 {
-    transform: perspective(1000px) rotateX(10deg) rotateY(10deg) translateZ(-50px);
-    transition: transform 1s ease-out;
+    transform: translateZ(-50px);
+    transition: transform 0.6s ease-out;
+    will-change: transform;
 }
 .reveal-text {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
 }
 .reveal-scale {
     opacity: 0;
     transform: scale(0.8);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
 }
 .reveal-box {
     opacity: 0;
-    transition: opacity 0.8s ease-out;
+    transition: opacity 0.6s ease-out;
+    will-change: opacity;
 }
-/* Delay untuk animasi berurutan */
+/* Optimized delay untuk animasi berurutan dengan interval yang lebih singkat */
 .d-0 { transition-delay: 0s; }
-.d-1 { transition-delay: 0.1s; }
-.d-2 { transition-delay: 0.2s; }
-.d-3 { transition-delay: 0.3s; }
-.d-4 { transition-delay: 0.4s; }
-.d-5 { transition-delay: 0.5s; }
-.d-6 { transition-delay: 0.6s; }
-.d-7 { transition-delay: 0.7s; }
-
-
-
-
+.d-1 { transition-delay: 0.05s; }
+.d-2 { transition-delay: 0.1s; }
+.d-3 { transition-delay: 0.15s; }
+.d-4 { transition-delay: 0.2s; }
+.d-5 { transition-delay: 0.25s; }
+.d-6 { transition-delay: 0.3s; }
+.d-7 { transition-delay: 0.35s; }
 
 /* --- TYPOGRAPHY --- */
 h1, h2, h3 {
@@ -304,7 +305,7 @@ p:hover {
 }
 .to-text {
     margin-top: 30px;
-    font-size: 0.9rem;
+    font-size: 0.6rem;
     line-height: 1.3;
 }
 
@@ -1668,7 +1669,7 @@ p:hover {
     }
     .to-text {
         margin-top: 30px;
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     .time-box span {
         font-size: 2.8rem;

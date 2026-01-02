@@ -292,33 +292,50 @@
         // Initialize variables
         let isOpened = false;
 
-        // Custom smooth scroll function with easing
-        function smoothScrollTo(element, duration = 1000) {
+        // Optimized smooth scroll function with easing and performance improvements
+        function smoothScrollTo(element, duration = 800) {
             const scrollContainer = document.getElementById('scrollContainer');
             const targetPosition = element.offsetTop;
             const startPosition = scrollContainer.scrollTop;
             const distance = targetPosition - startPosition;
             let startTime = null;
 
+            // Use native smooth scrolling for better performance on modern browsers
+            if ('scrollBehavior' in document.documentElement.style) {
+                scrollContainer.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                return;
+            }
+
             function animation(currentTime) {
                 if (startTime === null) startTime = currentTime;
                 const timeElapsed = currentTime - startTime;
-                const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+                const progress = Math.min(timeElapsed / duration, 1);
+                const easeProgress = easeInOutQuad(progress);
+                const run = startPosition + (distance * easeProgress);
                 scrollContainer.scrollTo(0, run);
-                if (timeElapsed < duration) requestAnimationFrame(animation);
+                if (progress < 1) requestAnimationFrame(animation);
             }
 
-            function easeInOutQuad(t, b, c, d) {
-                t /= d / 2;
-                if (t < 1) return c / 2 * t * t * t + b;
-                t -= 2;
-                return c / 2 * (t * t * t + 2) + b;
+            function easeInOutQuad(t) {
+                return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
             }
 
             requestAnimationFrame(animation);
         }
 
-        // NAVIGASI: izinkan navigasi selalu bisa diklik
+        // Throttling function to prevent rapid clicks
+        let isScrolling = false;
+        function throttleScroll(targetElement) {
+            if (isScrolling) return;
+            isScrolling = true;
+            smoothScrollTo(targetElement, 800);
+            setTimeout(() => isScrolling = false, 1000); // Prevent clicks for 1 second after scroll starts
+        }
+
+        // NAVIGASI: izinkan navigasi selalu bisa diklik dengan throttling
         document.addEventListener('click', function(e) {
             console.log('Click detected:', e.target);
             const link = e.target.closest('a[href^="#slide"]');
@@ -330,7 +347,7 @@
                 const targetElement = document.querySelector(href);
                 console.log('Target element:', targetElement);
                 if (targetElement) {
-                    smoothScrollTo(targetElement, 800);
+                    throttleScroll(targetElement);
                 }
             }
         });
