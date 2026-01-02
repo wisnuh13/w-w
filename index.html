@@ -25,6 +25,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Tangerine:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Added Montserrat for casual text -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -126,7 +128,7 @@
                 <div class="cloud c2"></div>
                 <div class="cloud c3"></div>
             </div>
-            <h2 class="reveal-text d-0">Menuju Hari Bahagia</h2>
+            <h2 class="reveal-text d-0">Hitung Mundur</h2>
             <div class="couple-wrapper reveal-box d-1">
                 <div class="countdown-wrapper">
             <div class="time-box reveal-scale d-2">
@@ -158,7 +160,7 @@
                 <div class="cloud c2"></div>
                 <div class="cloud c3"></div>
             </div>
-            <h1 class="reveal-text d-0">Gallery Photo</h1>
+            <h1 class="reveal-text d-0">Galeri Foto</h1>
             <p class="reveal-text d-1">A memory that we will treasure forever</p>
 
             <div class="gallery-container">
@@ -239,13 +241,31 @@
     <div id="butterfly9" class="butterfly-effect"></div>
     <div id="butterfly10" class="butterfly-effect"></div>
 
-    <!-- Bottom Navigation Menu -->
-    <nav class="bottom-nav">
+    <!-- Music Control Button -->
+    <div class="music-control" style="display: none;">
+        <div id="record-logo" class="record-logo">
+            <i class="fas fa-play"></i>
+        </div>
+    </div>
+
+    <!-- Floating Hearts Background Effects -->
+    <div class="floating-heart" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="floating-heart" style="left: 20%; animation-delay: 2s;"></div>
+    <div class="floating-heart" style="left: 30%; animation-delay: 4s;"></div>
+    <div class="floating-heart" style="left: 40%; animation-delay: 6s;"></div>
+    <div class="floating-heart" style="left: 50%; animation-delay: 8s;"></div>
+    <div class="floating-heart" style="left: 60%; animation-delay: 10s;"></div>
+    <div class="floating-heart" style="left: 70%; animation-delay: 12s;"></div>
+    <div class="floating-heart" style="left: 80%; animation-delay: 14s;"></div>
+    <div class="floating-heart" style="left: 90%; animation-delay: 16s;"></div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav" id="bottomNav" style="display: none;">
         <a href="#slide1" class="nav-item">
             <i class="fas fa-home"></i>
         </a>
         <a href="#slide2" class="nav-item">
-            <i class="fas fa-book"></i>
+            <i class="fas fa-book-open"></i>
         </a>
         <a href="#slide3" class="nav-item">
             <i class="fas fa-heart"></i>
@@ -262,58 +282,21 @@
         <a href="#slide9" class="nav-item">
             <i class="fas fa-gift"></i>
         </a>
-    </nav>
-
-    <!-- Music Control Button -->
-    <div class="music-control" style="display: none;">
-        <div id="record-logo" class="record-logo">
-            <i class="fas fa-play"></i>
-        </div>
+        <a href="#slide10" class="nav-item">
+            <i class="fas fa-envelope"></i>
+        </a>
     </div>
-
-
-
-    <!-- Floating Hearts Background Effects -->
-    <div class="floating-heart" style="left: 10%; animation-delay: 0s;"></div>
-    <div class="floating-heart" style="left: 20%; animation-delay: 2s;"></div>
-    <div class="floating-heart" style="left: 30%; animation-delay: 4s;"></div>
-    <div class="floating-heart" style="left: 40%; animation-delay: 6s;"></div>
-    <div class="floating-heart" style="left: 50%; animation-delay: 8s;"></div>
-    <div class="floating-heart" style="left: 60%; animation-delay: 10s;"></div>
-    <div class="floating-heart" style="left: 70%; animation-delay: 12s;"></div>
-    <div class="floating-heart" style="left: 80%; animation-delay: 14s;"></div>
-    <div class="floating-heart" style="left: 90%; animation-delay: 16s;"></div>
-
-    <!-- Falling Flower Petals Effects -->
-    <div class="falling-petal petal1"></div>
-    <div class="falling-petal petal2"></div>
-    <div class="falling-petal petal3"></div>
-    <div class="falling-petal petal4"></div>
-    <div class="falling-petal petal5"></div>
-    <div class="falling-petal petal6"></div>
-    <div class="falling-petal petal7"></div>
-    <div class="falling-petal petal8"></div>
-    <div class="falling-petal petal9"></div>
-    <div class="falling-petal petal10"></div>
-
-    <!-- Twinkling Stars Background Effects -->
-    <div class="twinkling-star star1"></div>
-    <div class="twinkling-star star2"></div>
-    <div class="twinkling-star star3"></div>
-    <div class="twinkling-star star4"></div>
-    <div class="twinkling-star star5"></div>
-    <div class="twinkling-star star6"></div>
-    <div class="twinkling-star star7"></div>
-    <div class="twinkling-star star8"></div>
-    <div class="twinkling-star star9"></div>
-    <div class="twinkling-star star10"></div>
 
     <script>
 
+        // Initialize variables
+        let isOpened = false;
+
         // Custom smooth scroll function with easing
         function smoothScrollTo(element, duration = 1000) {
+            const scrollContainer = document.getElementById('scrollContainer');
             const targetPosition = element.offsetTop;
-            const startPosition = window.pageYOffset;
+            const startPosition = scrollContainer.scrollTop;
             const distance = targetPosition - startPosition;
             let startTime = null;
 
@@ -321,11 +304,11 @@
                 if (startTime === null) startTime = currentTime;
                 const timeElapsed = currentTime - startTime;
                 const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
-                window.scrollTo(0, run);
+                scrollContainer.scrollTo(0, run);
                 if (timeElapsed < duration) requestAnimationFrame(animation);
             }
 
-            function easeInOutCubic(t, b, c, d) {
+            function easeInOutQuad(t, b, c, d) {
                 t /= d / 2;
                 if (t < 1) return c / 2 * t * t * t + b;
                 t -= 2;
@@ -335,29 +318,19 @@
             requestAnimationFrame(animation);
         }
 
-        // KUNCI NAVIGASI: mencegah pindah slide sampai undangan dibuka
-        let isOpened = false;
-        const scrollContainerEl = document.getElementById('scrollContainer');
-
-        // Cegah navigasi anchor ke slide lain (mis. menu bawah) saat terkunci
+        // NAVIGASI: izinkan navigasi selalu bisa diklik
         document.addEventListener('click', function(e) {
+            console.log('Click detected:', e.target);
             const link = e.target.closest('a[href^="#slide"]');
+            console.log('Link found:', link);
             if (link) {
+                e.preventDefault();
                 const href = link.getAttribute('href');
-                if (href && href !== '#slide1' && !isOpened) {
-                    e.preventDefault();
-                    // berikan umpan balik visual dengan membuat tombol buka bergetar singkat
-                    const openBtn = document.querySelector('.btn-buka');
-                    if (openBtn) {
-                        openBtn.classList.add('btn-shake');
-                        setTimeout(() => openBtn.classList.remove('btn-shake'), 700);
-                    }
-                } else if (href && isOpened) {
-                    e.preventDefault();
-                    const targetElement = document.querySelector(href);
-                    if (targetElement) {
-                        smoothScrollTo(targetElement, 800);
-                    }
+                console.log('Href:', href);
+                const targetElement = document.querySelector(href);
+                console.log('Target element:', targetElement);
+                if (targetElement) {
+                    smoothScrollTo(targetElement, 800);
                 }
             }
         });
@@ -389,14 +362,8 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    if (entry.target.id === 'slide1') {
-                        document.querySelector('.bottom-nav').style.display = 'none';
-                    }
                 } else {
                     entry.target.classList.remove('active');
-                    if (entry.target.id === 'slide1') {
-                        document.querySelector('.bottom-nav').style.display = 'flex';
-                    }
                 }
             });
         }, { threshold: 0 });
@@ -407,12 +374,15 @@
             document.getElementById('slide1').style.display = 'none';
             // Buka kunci navigasi dan aktifkan scroll
             isOpened = true;
-            document.getElementById('scrollContainer').style.overflowY = 'scroll';
+            document.getElementById('scrollContainer').style.overflowY = 'auto';
             const slide2 = document.getElementById('slide2');
             smoothScrollTo(slide2, 800);
 
             // Show music control button
             document.querySelector('.music-control').style.display = 'flex';
+
+            // Show bottom navigation
+            document.getElementById('bottomNav').style.display = 'flex';
 
             // Auto-play music
             backgroundMusic.play();
@@ -421,11 +391,7 @@
             recordLogo.classList.add('spinning');
             isPlaying = true;
 
-            // Trigger confetti burst
-            createConfetti();
 
-            // Start auto scroll through slides
-            autoScrollSlides();
         });
 
         // Function for auto scrolling through slides
